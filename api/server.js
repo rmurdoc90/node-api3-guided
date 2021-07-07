@@ -27,6 +27,7 @@ server.use('*', (req, res, next) => { // also can take next if needed
   })
 })
 
+// you just do this here
 server.use((err, req, res, next) => { // eslint-disable-line
   const status = err.status || 500
   res.status(status).json({
