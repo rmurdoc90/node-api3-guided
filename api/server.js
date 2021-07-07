@@ -1,6 +1,10 @@
 const express = require('express');
-const { logger, notFound, errorHandling } = require('./middlewares')
 const hubsRouter = require('./hubs/hubs-router.js');
+const {
+  logger,
+  notFound,
+  errorHandling,
+} = require('./middlewares');
 
 const server = express();
 
@@ -17,9 +21,9 @@ server.get('/', (req, res, next) => {
   `);
 });
 
-server.use('*', notFound)
+server.use('*', notFound);
 
 // you just do this here
-server.use(errorHandling)
+server.use(errorHandling);
 
 module.exports = server;
