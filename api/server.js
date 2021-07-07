@@ -13,7 +13,7 @@ server.use(express.json());
 // f takes req, res, next --> either call next  or send response to client
 // server.use(logger);
 
-server.use('/api/hubs', logger, hubsRouter);
+server.use('/api/hubs', [logger, logger], hubsRouter);
 
 server.get('/', (req, res, next) => {
   res.send(`
