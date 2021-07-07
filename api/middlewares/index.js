@@ -3,3 +3,12 @@ const logger = (req, res, next) => {
   req.foo = 'bar'
   next()
 }
+
+
+
+
+
+
+module.exports = {
+  logger
+}

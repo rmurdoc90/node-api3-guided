@@ -1,5 +1,5 @@
 const express = require('express');
-
+const { logger} = require('./middleware')
 const hubsRouter = require('./hubs/hubs-router.js');
 
 const server = express();
