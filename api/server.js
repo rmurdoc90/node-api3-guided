@@ -8,6 +8,7 @@ server.use(express.json());
 
 server.use((req, res, next) => {
   console.log(`req flowing through app`)
+  next()
 }) // f takes req, res, next --> either call next  or send response to client
 
 server.use('/api/hubs', hubsRouter);
