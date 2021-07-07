@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
       next({
         custom: 'problem getting hubs',
         message: error.message,
-      })
+      });
     });
 });
 
@@ -38,7 +38,7 @@ router.delete('/:id', checkHubId, (req, res, next) => {
     .catch(next);
 });
 
-router.put('/:id', checkHubId, (req, res, next) => {
+router.put('/:id', checkHubId, checkHubPayload, (req, res, next) => {
   Hubs.update(req.params.id, req.body)
     .then(hub => {
       res.status(200).json(hub);
