@@ -20,8 +20,8 @@ server.get('/', (req, res) => {
   `);
 });
 
-server.use('*', (req, res) => { // also can take next if needed
-  
+server.use('*', (req, res, next) => { // also can take next if needed
+  next({ status: 404, message: 'not found'})
 })
 
 server.use((err, req, res, next) => { // eslint-disable-line
