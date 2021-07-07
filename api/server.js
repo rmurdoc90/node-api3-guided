@@ -1,5 +1,5 @@
 const express = require('express');
-const { logger } = require('./middlewares')
+const { logger, notFound } = require('./middlewares')
 const hubsRouter = require('./hubs/hubs-router.js');
 
 const server = express();
@@ -17,11 +17,7 @@ server.get('/', (req, res, next) => {
   `);
 });
 
-server.use('*', (req, res, next) => { // also can take next if needed
-  res.status(404).json({
-    message: 'not found, sorry!'
-  })
-})
+server.use('*', notFound)
 
 // you just do this here
 server.use((err, req, res, next) => { // eslint-disable-line

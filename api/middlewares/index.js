@@ -4,11 +4,16 @@ const logger = (req, res, next) => {
   next()
 }
 
-
+const notFound = (req, res, next) => { // also can take next if needed
+  res.status(404).json({
+    message: 'not found, sorry!'
+  })
+}
 
 
 
 
 module.exports = {
-  logger
+  logger,
+  notFound,
 }
