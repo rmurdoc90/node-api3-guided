@@ -10,10 +10,15 @@ const notFound = (req, res, next) => { // also can take next if needed
   })
 }
 
-
-
+const errorHandling = (err, req, res, next) => { // eslint-disable-line
+  const status = err.status || 500
+  res.status(status).json({
+    message: err.message,
+  })
+}
 
 module.exports = {
   logger,
   notFound,
+  errorHandling,
 }
