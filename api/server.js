@@ -10,7 +10,7 @@ const server = express();
 
 server.use(express.json());
 
-server.use(logger) // f takes req, res, next --> either call next  or send response to client
+server.use(logger); // f takes req, res, next --> either call next  or send response to client
 
 server.use('/api/hubs', hubsRouter);
 
