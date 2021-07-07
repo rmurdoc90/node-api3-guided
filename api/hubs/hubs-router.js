@@ -6,16 +6,7 @@ const Messages = require('../messages/messages-model.js');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  Hubs.find(req.query)
-    .then(hubs => {
-      res.status(200).json(hubs);
-    })
-    .catch(error => {
-      next({
-        custom: 'problem getting hubs',
-        message: error.message,
-      });
-    });
+  res.json('workingsz')
 });
 
 router.get('/:id', checkHubId, (req, res, next) => {
