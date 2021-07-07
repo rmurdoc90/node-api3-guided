@@ -21,9 +21,7 @@ server.get('/', (req, res) => {
 });
 
 server.use('*', (req, res) => { // also can take next if needed
-  res.status(404).json({
-    message: 'not found, sorry!'
-  })
+  
 })
 
 server.use((err, req, res, next) => { // eslint-disable-line
