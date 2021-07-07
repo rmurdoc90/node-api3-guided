@@ -1,9 +1,7 @@
 const Hub = require('../hubs/hubs-model')
 
-const checkHubId = (req, res, next) => {
-  const { id } = req.params
-  console.log(`the id is ${id}`)
-  next()
+const checkHubId = async (req, res, next) => {
+  
 }
 
 const logger = (req, res, next) => {
