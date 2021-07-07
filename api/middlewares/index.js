@@ -5,7 +5,6 @@ const checkHubId = async (req, res, next) => {
     const { id } = req.params
     console.log(`the id is ${id}`)
     const hub = await Hub.findById(id)
-
     if (hub) {
       next()
     } else {
