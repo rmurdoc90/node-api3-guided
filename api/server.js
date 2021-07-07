@@ -6,6 +6,8 @@ const server = express();
 
 server.use(express.json());
 
+server.use() // f
+
 server.use('/api/hubs', hubsRouter);
 
 server.get('/', (req, res) => {
