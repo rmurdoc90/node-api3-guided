@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors')
+const cors = require('cors');
 const hubsRouter = require('./hubs/hubs-router.js');
 const {
   logger,
@@ -9,6 +9,7 @@ const {
 
 const server = express();
 
+server.use(cors());
 server.use(express.json());
 
 // f takes req, res, next --> either call next  or send response to client
