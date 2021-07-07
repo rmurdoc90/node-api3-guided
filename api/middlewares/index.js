@@ -8,10 +8,10 @@ const checkHubId = async (req, res, next) => {
     if (hub) {
       next()
     } else {
-      // next({
-      //   status: 404,
-      //   message: `hub with id ${id} not found`,
-      // })
+      next({
+        status: 404,
+        message: `hub with id ${id} not found`,
+      })
     }
   } catch (err) {
     next(err)
