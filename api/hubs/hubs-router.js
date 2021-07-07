@@ -19,7 +19,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', checkHubId, (req, res, next) => {
-  res.json(req.hub)
+  res.json(req.hub);
 });
 
 router.post('/', checkHubPayload,(req, res, next) => {
