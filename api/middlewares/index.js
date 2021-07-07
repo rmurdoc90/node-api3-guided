@@ -4,7 +4,7 @@ const logger = (req, res, next) => {
   next()
 }
 
-const notFound = (req, res, next) => { // also can take next if needed
+const notFound = (req, res, next) => {
   res.status(404).json({
     message: 'not found, sorry!'
   })
