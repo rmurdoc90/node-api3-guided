@@ -1,3 +1,8 @@
+const checkHubId = (req, res, next) {
+  
+}
+
+
 const logger = (req, res, next) => {
   console.log(`${req.method} request`)
   req.foo = 'web 43 is awesome'
