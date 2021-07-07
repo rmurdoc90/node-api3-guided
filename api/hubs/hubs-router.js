@@ -66,17 +66,13 @@ router.put('/:id', (req, res, next) => {
     });
 });
 
-router.get('/:id/messages', (req, res) => {
+router.get('/:id/messages', (req, res, next) => {
   Hubs.findHubMessages(req.params.id)
     .then(messages => {
       res.status(200).json(messages);
     })
     .catch(error => {
-      // log error to server
-      console.log(error);
-      res.status(500).json({
-        message: 'Error getting the messages for the hub',
-      });
+      next(error)
     });
 });
 
