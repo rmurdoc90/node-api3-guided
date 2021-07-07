@@ -1,5 +1,7 @@
 const checkHubId = (req, res, next) => {
   const { id } = req.params
+  console.log(`the id is ${id}`)
+  next()
 }
 
 
