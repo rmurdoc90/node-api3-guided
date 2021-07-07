@@ -7,7 +7,7 @@ const checkHubPayload = (req, res, next) => {
       message: 'name is required!'
     })
   } else {
-    
+    next()
   }
 }
 
