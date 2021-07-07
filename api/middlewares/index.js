@@ -1,5 +1,9 @@
 const Hub = require('../hubs/hubs-model')
 
+const checkHubPayload = (req, res, next) => {
+  
+}
+
 const checkHubId = async (req, res, next) => {
   try {
     const { id } = req.params
