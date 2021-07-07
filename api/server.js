@@ -7,7 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.use((req, res, next) => {
-  console.log(`req flowing through app`)
+  console.log(`${req.method} request`)
   next()
 }) // f takes req, res, next --> either call next  or send response to client
 
