@@ -1,16 +1,12 @@
 const express = require('express');
-const { logger} = require('./middleware')
+const { logger } = require('./middlewares')
 const hubsRouter = require('./hubs/hubs-router.js');
 
 const server = express();
 
 server.use(express.json());
 
-server.use((req, res, next) => {
-  console.log(`${req.method} request`)
-  req.foo = 'bar'
-  next()
-}) // f takes req, res, next --> either call next  or send response to client
+server.use(logger) // f takes req, res, next --> either call next  or send response to client
 
 server.use('/api/hubs', hubsRouter);
 
