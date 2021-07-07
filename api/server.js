@@ -14,14 +14,14 @@ server.use((req, res, next) => {
 
 server.use('/api/hubs', hubsRouter);
 
-server.get('/', (req, res) => {
+server.get('/', (req, res, next) => {
   res.send(`
     <h2>Lambda Hubs API ${req.foo}</h2>
     <p>Welcome to the Lambda Hubs API</p>
   `);
 });
 
-server.use('*', (req, res) => { // also can take next if needed
+server.use('*', (req, res, next) => { // also can take next if needed
   res.status(404).json({
     message: 'not found, sorry!'
   })
