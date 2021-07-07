@@ -9,15 +9,15 @@ const {
 
 const server = express();
 
-// server.use(cors());
+server.use(cors());
 server.use(express.json());
 
 // f takes req, res, next --> either call next  or send response to client
 // server.use(logger);
 
-server.use('/api/hubs', [logger, logger], cors, hubsRouter);
+server.use('/api/hubs', [logger, logger], hubsRouter);
 
-server.get('/', logger, (req, res, next) => {
+server.use('/', logger, (req, res, next) => {
   res.send(`
     <h2>Lambda Hubs API ${req.foo}</h2>
     <p>Welcome to the Lambda Hubs API</p>
