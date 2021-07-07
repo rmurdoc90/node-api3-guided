@@ -15,7 +15,7 @@ server.use(express.json());
 
 server.use('/api/hubs', [logger, logger], hubsRouter);
 
-server.get('/', (req, res, next) => {
+server.get('/', logger, (req, res, next) => {
   res.send(`
     <h2>Lambda Hubs API ${req.foo}</h2>
     <p>Welcome to the Lambda Hubs API</p>
