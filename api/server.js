@@ -10,7 +10,8 @@ const server = express();
 
 server.use(express.json());
 
-server.use(logger); // f takes req, res, next --> either call next  or send response to client
+// f takes req, res, next --> either call next  or send response to client
+server.use(logger);
 
 server.use('/api/hubs', hubsRouter);
 
@@ -23,7 +24,7 @@ server.get('/', (req, res, next) => {
 
 server.use('*', notFound);
 
-// you just do this here
+// you just do this here at the end of the pipeline
 server.use(errorHandling);
 
 module.exports = server;
