@@ -6,7 +6,7 @@ const server = express();
 
 server.use(express.json());
 
-server.use() // f
+server.use(()) // f takes req, res, next --> either call next  or send response to client
 
 server.use('/api/hubs', hubsRouter);
 
