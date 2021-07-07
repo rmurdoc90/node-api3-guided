@@ -62,11 +62,7 @@ router.put('/:id', (req, res, next) => {
       }
     })
     .catch(error => {
-      // log error to server
-      console.log(error);
-      res.status(500).json({
-        message: 'Error updating the hub',
-      });
+      next(error)
     });
 });
 
