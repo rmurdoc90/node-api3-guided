@@ -18,7 +18,7 @@ router.get('/', (req, res, next) => {
     });
 });
 
-router.get('/:id', (req, res, next) => {
+router.get('/:id', checkHubId, (req, res, next) => {
   Hubs.findById(req.params.id)
     .then(hub => {
       if (hub) {
