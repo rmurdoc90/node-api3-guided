@@ -27,7 +27,7 @@ server.use('*', (req, res) => {
 })
 
 server.use((err, req, res, next) => {
-  
+  // terrible things
 })
 
 module.exports = server;
