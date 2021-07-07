@@ -1,7 +1,13 @@
 const Hub = require('../hubs/hubs-model')
 
 const checkHubId = async (req, res, next) => {
-  
+  try {
+    const { id } = req.params
+    console.log(`the id is ${id}`)
+    next()
+  } catch (err) {
+    next(err)
+  }
 }
 
 const logger = (req, res, next) => {
