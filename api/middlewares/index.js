@@ -1,5 +1,5 @@
-const checkHubId = (req, res, next) {
-  
+const checkHubId = (req, res, next) => {
+  const { id } = req.params
 }
 
 
@@ -26,4 +26,5 @@ module.exports = {
   logger,
   notFound,
   errorHandling,
+  checkHubId,
 }
