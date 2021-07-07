@@ -9,7 +9,10 @@ const checkHubId = async (req, res, next) => {
     if (possibleHub) {
       next()
     } else {
-      next()
+      next({
+        status: 404,
+        message: `hub with id ${id} not found`,
+      })
     }
   } catch (err) {
     next(err)
