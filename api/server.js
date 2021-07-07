@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const hubsRouter = require('./hubs/hubs-router.js');
 const {
   logger,
