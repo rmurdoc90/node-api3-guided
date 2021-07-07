@@ -1,14 +1,7 @@
 const Hub = require('../hubs/hubs-model')
 
 const checkHubPayload = (req, res, next) => {
-  if (!req.body.name) {
-    next({
-      status: 422,
-      message: 'name is required!'
-    })
-  } else {
-    next()
-  }
+  
 }
 
 const checkHubId = async (req, res, next) => {
