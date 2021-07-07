@@ -1,4 +1,4 @@
-const 
+const Hub = require('../hubs/hubs-model')
 
 const checkHubId = (req, res, next) => {
   const { id } = req.params
